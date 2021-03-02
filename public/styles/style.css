@@ -144,6 +144,30 @@
   }
 }
 
+@-webkit-keyframes AboutBackgrounds {
+  0% {
+    background-position: 0% 96%;
+  }
+  50% {
+    background-position: 100% 5%;
+  }
+  100% {
+    background-position: 0% 96%;
+  }
+}
+
+@keyframes AboutBackgrounds {
+  0% {
+    background-position: 0% 96%;
+  }
+  50% {
+    background-position: 100% 5%;
+  }
+  100% {
+    background-position: 0% 96%;
+  }
+}
+
 html {
   font-size: 100%;
   -webkit-box-sizing: border-box;
@@ -601,10 +625,11 @@ header {
 
 .me {
   border-radius: 5px;
-  background: linear-gradient(45deg, #edf0ec, #e8ecae, #b6cfd2, #d5d5d5);
+  background: -webkit-gradient(linear, right top, left top, from(#ececec), color-stop(#aefff1), color-stop(#c0ffae), to(#aed0ff));
+  background: linear-gradient(270deg, #ececec, #aefff1, #c0ffae, #aed0ff);
   background-size: 800% 800%;
-  -webkit-animation: Jtfbackground 20s ease infinite;
-          animation: Jtfbackground 20s ease infinite;
+  -webkit-animation: AboutBackgrounds 30s ease infinite;
+          animation: AboutBackgrounds 30s ease infinite;
 }
 
 .red {
