@@ -1,0 +1,53 @@
+.maincontainer{
+    padding: 8px;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+    grid-template-rows: auto;
+    gap: 8px 8px;
+}
+//maincontainer stuff
+
+.maincontainer h2{
+    padding: 6px;
+    font-size: 12px;
+}
+.maincontainer a{
+    text-decoration: none;
+    color: black;
+}
+
+.jtftext{
+    padding: 12px;
+    font-size: 24px;
+}
+
+
+//below bit is to setup the grid names
+.jtf{
+    border-radius: 5px;
+    background: linear-gradient(45deg, #edf0ec, #e8ecae, #b6cfd2, #d5d5d5);
+    background-size: 800% 800%;
+    animation: Jtfbackground 20s ease infinite;
+}
+
+.me{
+    border-radius: 5px;
+    background: linear-gradient(45deg, #edf0ec, #e8ecae, #b6cfd2, #d5d5d5);
+    background-size: 800% 800%;
+    animation: Jtfbackground 20s ease infinite;
+}
+
+.red{
+    border-radius: 5px;
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+.green{
+    background-color: green;
+}
+.yellow{
+    background-color: yellow;
+}
