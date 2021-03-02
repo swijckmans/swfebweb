@@ -1,89 +1,206 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.2.6/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.2.6/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.2.6/firebase-database.js"></script>
-    <script defer src="/__/firebase/8.2.6/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.2.6/firebase-functions.js"></script>
-    <script defer src="/__/firebase/8.2.6/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/8.2.6/firebase-storage.js"></script>
-    <script defer src="/__/firebase/8.2.6/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.2.6/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.2.6/firebase-performance.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Simon Wijckmans - personal site</title>
+  <meta name="description"
+    content="Simon Wijckmans is a young technology enthusiast work on a variety of projects. Currently working on Jo the fish, a browser plugin that warns users about unethical businesses. While also working as a Solution Architect and Subject Matter Expert at Cloudflare.">
+  <meta name="description" content="Techy, Builder">
+  <meta name="description" content="Microsoft">
+  <meta name="description" content="Cloudflare">
+  <meta name="description" content="Jo the fish">
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+  <link rel="icon" href="images/browsericon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+
+  <div class="loader">
+    <img src="images/loading.gif" alt="Welcome animation" />
+  </div>
+
+  <header class="header">
+    <a class="headerlogo" href="index.html">
+      <img src="images/mini/SW Logo 480.png" class="logo" alt="Simon's logo"
+        onmouseover="this.src='images/mini/jitter_mini.gif'" onmouseout="this.src='images/mini/SW Logo 480.png'"></img>
+    </a>
+
+    <div class="menu_button">
+      <input type="checkbox" id="menu_checkbox">
+      <label for="menu_checkbox" id="menu_label" onclick="show_menu()">
+        <div id="menu_text_bar"></div>
+      </label>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <div class="menuboxmobile" id="menuboxmobile2">
+      <div class="top-bar" id="menubar">
+        <div class="social_block">
+          <a class="social_links" href="https://redirects.simonwijckmans.com/socials/instagram"><img
+              src="images/socials/instagram.svg" alt="Instagram logo" height="15px"></a>
+          <a class="social_links" href="https://redirects.simonwijckmans.com/socials/twitter"><img
+              src="images/socials/twitter.svg" alt="Twitter logo" height="15px"></a>
+          <a class="social_links" href="https://redirects.simonwijckmans.com/socials/linkedin"><img
+              src="images/socials/linkedin.svg" alt="linkedin logo" height="15px"></a>
+          <a class="social_links" href="https://redirects.simonwijckmans.com/socials/producthunt"><img
+              src="images/socials/producthunt.svg" alt="producthunt logo" height="15px"></a>
+        </div>
+        <nav class="nav_block">
+          <a class="nav_links" href="about.html">About</a>
+          <a class="nav_links" href="blog.html">Blog</a>
+          <a class="nav_links" href="projects.html">Projects</a>
+          <a class="nav_links" href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+  <div class="maincontainer">
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat sapiente ut possimus obcaecati facere quia libero,
+    at, saepe quo sequi commodi assumenda, quibusdam aperiam corporis fugiat officiis temporibus rem nam repudiandae
+    sint ipsum? Sequi commodi, consequatur officiis quos possimus illo soluta omnis deserunt, delectus asperiores autem
+    quae perspiciatis hic, ducimus vel voluptas eveniet expedita cum. Delectus at laborum aspernatur eum necessitatibus
+    aliquam quod. Voluptate veniam laborum quas libero! Ab neque dolor magni debitis quos adipisci facere quam facilis
+    aperiam atque cum, ratione vel inventore vitae, architecto veritatis hic eum, tempore eveniet. Recusandae provident
+    numquam, et asperiores nihil consectetur nostrum, voluptatibus ipsum corporis deleniti adipisci nisi, sunt magnam
+    ducimus soluta? Deleniti ab dolorem recusandae minus suscipit perspiciatis sunt dolor earum cum enim reprehenderit
+    nam maxime fugiat et quos corporis soluta voluptatibus adipisci architecto, maiores, assumenda voluptate magnam
+    autem. Rerum natus ducimus ad unde iste iure? In quam suscipit itaque quo debitis nulla! Dolor ipsa velit sunt esse
+    architecto, natus impedit tempora. Culpa voluptas quia autem earum, quos laboriosam ut quasi doloremque obcaecati id
+    facere recusandae enim aliquid iste consequuntur modi cum totam aperiam? Dicta, suscipit laborum consectetur quis
+    unde laudantium distinctio. Provident adipisci maxime similique mollitia, incidunt nostrum dicta repellendus quo,
+    officiis nisi unde recusandae. Aperiam nobis iste labore tempora expedita dignissimos ratione! Tempore harum ab vel.
+    Veritatis quisquam mollitia quasi temporibus itaque excepturi esse eaque eum, molestiae tempora facere impedit
+    praesentium voluptatum tempore suscipit facilis hic rerum ex laborum vero quod perferendis sunt dicta. Enim sapiente
+    molestiae suscipit labore debitis quam eligendi magnam, praesentium ipsa. Error eum perferendis harum ipsam quod
+    atque? Voluptas minus ab itaque veniam repellat error nesciunt vitae numquam, impedit facere maxime, velit eveniet
+    quod iusto laboriosam animi quidem quo aperiam commodi corrupti officiis atque vel porro non! Quae natus aspernatur
+    quisquam provident hic velit minima corporis. Temporibus alias illo repellat assumenda quas, illum vero quos dolorem
+    fuga expedita perferendis deserunt nesciunt voluptatem, earum officia aliquam rem fugit distinctio maiores
+    repellendus tenetur architecto ipsam! Illo labore excepturi sunt, distinctio minima ducimus sequi! Maiores id quia
+    ullam accusamus, error sapiente hic itaque enim laborum ducimus eos voluptatum distinctio eum deleniti. Vel corrupti
+    dolorum molestiae, ipsam maxime commodi suscipit rerum natus iusto, nesciunt libero vero iste magni in fugit itaque
+    ad deserunt aliquam adipisci officia amet beatae ut. Amet quam maiores earum ea voluptatibus quia, repellendus illo,
+    mollitia repellat iste, eaque cumque quos adipisci perferendis repudiandae fugiat minima sed in distinctio iure
+    consequatur. Optio provident magnam sunt. Esse, ullam. Asperiores, optio. Illo recusandae quia assumenda nihil
+    libero blanditiis magnam eius non repellendus dolorem nemo similique, quaerat obcaecati fugit eos. Consectetur culpa
+    perspiciatis fugit error id reprehenderit voluptatum esse accusamus voluptatibus molestiae ullam eius sed, vero
+    sequi ipsum odio cupiditate saepe autem cumque consequatur eligendi vitae. Consequatur tempora eos quae sequi
+    temporibus facere neque modi hic nam. Earum harum modi sit tenetur officia aliquid ea debitis facilis cumque
+    accusamus porro, voluptatum sint quos commodi incidunt eaque dolor sequi aperiam iusto eos nostrum corrupti
+    praesentium fugit. Minima dignissimos ab harum in commodi. Nostrum corrupti consequatur tenetur tempora temporibus
+    maxime itaque consectetur, molestiae expedita voluptate ab, beatae laborum, neque iste. Quaerat non nobis doloribus
+    quae rerum laboriosam consectetur quidem molestias tenetur iure, distinctio deserunt magni dolorem voluptatum!
+    Beatae at necessitatibus vitae, nesciunt ex cumque officiis magnam, corrupti quam facere sed hic, dolorem culpa!
+    Atque praesentium expedita labore quod cumque, laborum similique dolorum repudiandae ad quisquam optio eaque
+    consectetur ab, accusamus enim earum culpa! Voluptates, sed placeat quod voluptatibus libero laudantium voluptatum
+    deleniti ducimus rem vitae molestias tempora autem tempore voluptatem vel delectus laboriosam illum distinctio?
+    Cumque ex fugit ad illo omnis accusamus aperiam quas natus necessitatibus numquam eveniet inventore quo expedita
+    animi corporis voluptates quidem, hic quam qui fugiat quisquam incidunt earum at. Recusandae earum officiis ea
+    veritatis facilis, velit similique aliquam soluta necessitatibus eos sit! Fuga consequatur saepe provident, impedit
+    ducimus totam voluptatibus sunt repellat quod ab amet ipsa assumenda et laborum labore perferendis excepturi facere
+    quam at architecto eos necessitatibus minima reiciendis? Voluptate tenetur laborum praesentium eaque commodi dolor,
+    officia similique soluta qui sint beatae. Quisquam illum tempora, minus nisi facilis ab nam numquam debitis totam
+    harum eveniet rem iusto reprehenderit, voluptates rerum, excepturi porro cupiditate. Dolor nihil neque aliquam
+    molestias accusamus sequi, dolorem voluptatum culpa! Repellat suscipit delectus numquam cumque! Recusandae deserunt
+    reprehenderit repellat neque velit facere doloremque excepturi numquam. Rerum libero, deserunt exercitationem soluta
+    facere, odio ducimus deleniti in explicabo dolores ut cupiditate quas molestiae nihil possimus facilis voluptatum
+    excepturi iusto. Est eaque voluptas magnam similique sed praesentium repellat voluptates minus quas suscipit
+    voluptatum perspiciatis deserunt iste debitis eveniet, unde iure, consectetur, autem voluptate corrupti repudiandae
+    rerum quia dolor. Voluptates, porro atque quod pariatur repudiandae tenetur beatae, alias neque iste possimus nemo
+    eveniet exercitationem incidunt, esse consequatur? Dolore expedita nobis id dolores voluptatum ipsa, cumque non
+    pariatur asperiores molestias dicta, laboriosam doloribus quos quae deserunt! Consequuntur, minima? Doloremque
+    explicabo, vitae labore blanditiis ipsum, porro qui soluta id deserunt autem adipisci ipsam! Explicabo laboriosam,
+    qui corrupti eum et doloremque eaque totam. Nisi quibusdam eaque ut laborum quae exercitationem adipisci temporibus
+    animi ipsa quos! Minus itaque deserunt saepe velit? Velit earum magnam cum? Alias sit, distinctio perferendis
+    architecto quas nulla, odit tempora, libero quidem voluptates earum ipsa officia. Eligendi cumque velit officia
+    explicabo porro quos quod atque magnam nostrum perspiciatis iste ea quae impedit laboriosam, deleniti ut! Nesciunt
+    nulla dolores harum repellendus nobis minima modi neque nihil quo labore! Maxime ratione omnis eligendi in rerum
+    ducimus, soluta expedita consequuntur similique vitae harum obcaecati, aperiam nostrum nesciunt consectetur totam
+    voluptatibus temporibus facilis molestiae deleniti culpa optio! Illum commodi assumenda ipsam ut. Numquam accusamus
+    nesciunt dolorum ex corrupti laudantium eligendi natus, pariatur minima? Quos aliquam quo nisi tenetur nostrum
+    voluptates omnis ad iusto qui, cum, pariatur, ipsum iure ratione? Veniam ipsa quisquam sunt pariatur natus deserunt
+    dolorem optio officia hic vitae nihil assumenda similique asperiores consequuntur corporis neque facere, voluptatum
+    ex, magni officiis veritatis maxime odit obcaecati. Vitae aliquam consequatur quia unde, harum explicabo
+    accusantium, nulla nesciunt iste neque magni laudantium nostrum in quidem error architecto ipsa. Dolore molestiae
+    sapiente dolorum, quo amet esse corrupti voluptas iste cupiditate quae dolorem eligendi, vero asperiores inventore
+    itaque aspernatur? Magni obcaecati sapiente eligendi nisi corrupti? Non ducimus aut illo, quisquam, eligendi numquam
+    a nisi facere nesciunt dicta cum, qui voluptatem ad sit fuga maxime amet eum expedita possimus beatae recusandae
+    incidunt unde architecto sed. Molestias odio consequuntur quae quia aut ipsum quam tenetur ullam quos vitae
+    provident, excepturi autem dolore quo itaque nobis, rerum veniam, ratione quaerat. Quo ex atque consectetur alias
+    distinctio sapiente omnis illum necessitatibus ipsum voluptatem? Iste in cum dolor, quisquam dicta eveniet
+    reiciendis, officia eaque, veniam vero delectus. Illo ab, quibusdam amet quia placeat voluptatibus repellat
+    cupiditate labore, atque repudiandae laborum blanditiis aliquam, sunt consequuntur. Fugit odit ipsa saepe voluptatum
+    unde officiis tenetur est nisi soluta repellat? Neque voluptas eius est eligendi ut, vel quidem consequuntur
+    reiciendis distinctio deleniti ullam similique deserunt quaerat, alias qui aperiam perspiciatis harum sint, facere
+    obcaecati voluptates. Iure nihil necessitatibus distinctio reiciendis, officia molestias, harum officiis soluta
+    ullam eaque facilis tempora iste deleniti veritatis. Numquam eaque nulla dicta enim quae illum voluptatum cupiditate
+    doloremque adipisci recusandae reiciendis expedita fuga, debitis ut autem est labore placeat odit? Quaerat incidunt
+    distinctio adipisci ex excepturi accusantium, possimus, ullam quisquam exercitationem nulla, molestiae fugit aperiam
+    doloremque nisi modi nobis a. Deleniti fugit, commodi exercitationem laboriosam praesentium tempora voluptates
+    provident unde placeat, numquam ut debitis beatae dolor architecto. Hic magnam dolorum tempore maxime reiciendis
+    voluptas ipsum consequatur optio odit in fuga delectus illum, aliquam, nostrum alias! Aliquid quibusdam illum hic
+    quasi nihil perferendis veritatis eveniet ducimus quam, laboriosam ad provident ipsa eos exercitationem at nostrum
+    libero sint accusamus maiores commodi, voluptatibus tempore? Blanditiis error dolorum iste impedit quo fugit ullam
+    odio officiis asperiores sit, corrupti accusamus accusantium, suscipit optio a sunt delectus, quisquam nesciunt
+    aspernatur inventore exercitationem velit consequuntur amet numquam? Aliquam qui rem est optio iure vel rerum,
+    laboriosam cum, mollitia illo eligendi cupiditate veritatis quod dicta repellat repudiandae ut sit fuga ad in
+    quisquam at libero deleniti. Quia error, sint distinctio nam, itaque vel amet modi quo voluptatem recusandae enim
+    esse? Ipsum tempora eius possimus voluptas harum culpa fuga odio veritatis ad autem incidunt, dolore suscipit magni
+    reiciendis tenetur error, porro, quod nostrum quia? Vitae, nam aut. Reiciendis eius culpa ab facere ullam voluptas
+    nesciunt, doloribus molestias, inventore nihil quidem aspernatur perspiciatis, numquam distinctio pariatur! Nemo
+    ipsa iusto animi consequatur, quia cupiditate, nulla tenetur quo soluta nam itaque natus aspernatur, id fugit? Modi
+    ea blanditiis ad nobis ipsum repellat voluptas molestias odio exercitationem vitae sed ex assumenda, fugit libero
+    saepe repellendus expedita labore totam delectus temporibus esse quod nisi. Ipsa, magnam! Voluptas possimus labore
+    officia iusto doloremque ex! Optio distinctio voluptatum quasi tempora incidunt neque id, repellendus culpa natus
+    earum doloremque delectus labore consequuntur inventore voluptatem laborum vel quas eius praesentium impedit.
+    Placeat illum, quidem atque corporis sunt nisi dolore dolor aliquid totam maxime molestias porro beatae similique
+    quae molestiae, sit ducimus modi ex vitae consequuntur accusantium fugiat iusto.
+
+
+
+
+  </div>
+
+
+
+
+  <footer>
+    <div class="footer">
+      <div class="policy">
+        <ul>
+          <li><a tabindex="0" href="https://notion.simonwijckmans.com/wishlist">birthday wishlist</a></li>
+          <li><a tabindex="0" href="https://notion.simonwijckmans.com/privacy">privacy policy</a></li>
+        </ul>
+      </div>
+
+      <div class="coprightandwhomadethis">
+        <div class="copyrightbottom">
+                &copy;
+                <span id="copyright">
+                    <script>
+                        document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+                    </script>
+                </span>
+                Simon Wijckmans🦰
+        </div>
+        <div class="creditsbottom">
+          Built with my bare hands 🙌
+        </div>
+      </div>
+      <br>
+
+      <div class="disclaimer">
+        <p1></p1>
+      </div>
+
+
+    </div>
+  </footer>
+</body>
+
 </html>
