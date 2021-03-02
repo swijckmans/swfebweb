@@ -1,0 +1,62 @@
+.footer {
+    padding: 5px;
+    color: #656565;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    background-color: $dark;
+}
+.coprightandwhomadethis{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.copyrightbottom{
+    float: left;
+}
+.creditsbottom {
+    float: right;
+}
+.policy {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 8px;
+}
+.policy ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    list-style: none;
+    padding-inline-start: 0;
+
+}
+.policy li{
+    padding: 10px;
+    color: $whiteIsh;
+}
+.policy a{
+    font-size: 10px;
+    color: $whiteIsh;
+    text-decoration: none;
+}
+.policy a:hover{
+    color: $brightYellow;
+}
+.disclaimer {
+    width: 100%;
+    padding-top: 7px;
+    margin: 0px;
+    text-align: center;
+}
+.disclaimer  p1{
+    color: #aaaaaa;
+    font-size: 6px;
+    bottom: 0px;
+    text-align: center;
+}

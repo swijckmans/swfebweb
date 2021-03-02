@@ -1,0 +1,258 @@
+header {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: auto;
+    width: 100%;
+    height: 66px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: $borderDark;
+    background-color: $darkGrey;
+    text-align: center;
+}
+
+.headerlogo {
+    cursor: pointer;
+    position: absolute;
+    padding: 12px;
+    left: 50%;
+    z-index: 100;
+    transform: translate(-50%, 0);
+}
+
+.logo {
+    cursor: pointer;
+    height: 42px;
+    background-color: $darkGrey;
+    position: absolute;
+    left: 50%;
+    z-index: 100;
+    transform: translate(-50%, 0);
+}
+
+.logo img {
+    vertical-align: middle;
+}
+
+// navbar below
+
+.nav_block {
+    padding-right: 20px;
+    padding-left: 20px;
+    float: right;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: $borderDark;
+}
+
+.nav_links {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+    font-weight: 500;
+    font-size: 13px;
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 66px;
+    padding: 24px 10px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.nav_links:hover {
+    transition: color .5s;
+    transition: ease-in-out border-bottom .5s;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: $brightYellow;
+    color: $brightYellow;
+    text-decoration: none;
+}
+
+
+
+// social media links below
+.social_block {
+    position: relative;
+    display: inline-block;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: $borderDark;
+    height: 66px;
+    float: right;
+    padding: 20px 10px;
+    margin-left: auto;
+    margin-right: 2%;
+}
+
+.social_links {
+    cursor: pointer;
+    padding: 20px 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 66px;
+    border-bottom: 1px solid transparent;
+}
+
+.social_links:hover {
+    border-bottom-color: $brightYellow;
+}
+
+.social_links img {
+    vertical-align: middle;
+}
+
+//mobile burger icon
+
+.menu_button{
+    visibility: hidden;
+    display: none;
+}
+
+@media (max-width: 1100px){
+    //logo
+    .headerlogo {
+        margin-left: 10px;
+        padding: 10px;
+        left: 0%;
+    }
+
+    .logo {
+        transform: translate(0, 0);
+    }
+
+    //related to the menu box below
+    .menuboxmobile {
+        visibility: visible;
+        position: absolute;
+        display: flex;
+        background-color: rgba(0, 0, 0, 0.65);
+        border-left-width: 1px;
+        border-left-style: solid;
+        border-left-color: $borderDark;
+        top: 66px;
+        width: fit-content;
+        height: 100vh;
+        right: -1000px;
+        transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+    }
+    
+    //below is all related to the menu button
+    .menu_button {
+        position: absolute;
+        visibility: visible;
+        display: unset;
+        float: right;
+        margin: 17px;
+        right: 0px;
+        width: 39px;
+        overflow: hidden;
+    }
+
+    #menu_checkbox {
+        display: none;
+    }
+
+    #menu_label {
+        position: relative;
+        display: block;
+        height: 29px;
+        cursor: pointer;
+    }
+    #menu_label:before, #menu_label:after, #menu_text_bar {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background-color: $brightYellow;
+    }
+    #menu_label:before, #menu_label:after {
+        content: '';
+        transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) left;
+    }
+    #menu_label:before {
+        top: 0;
+    }
+    #menu_label:after {
+        top: 12px;
+    }
+    #menu_text_bar {
+        top: 24px;
+    }
+    #menu_text_bar:before {
+        content: 'MENU';
+        position: absolute;
+        top: 5px;
+        right: 0;
+        left: 0;
+        color: $brightYellow;
+        font-size: 12px;
+        font-weight: bold;
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+    #menu_checkbox:checked+#menu_label:before {
+        left: -39px;
+    }
+    #menu_checkbox:checked+#menu_label:after {
+        left: 39px;
+    }
+    #menu_checkbox:checked+#menu_label #menu_text_bar:before {
+        animation: moveUpThenDown 0.8s ease 0.2s forwards, shakeWhileMovingUp 0.8s ease 0.2s forwards, shakeWhileMovingDown 0.2s ease 0.8s forwards;
+    }
+
+    // below is related to the actual buttons in the mobile menu
+    .social_block {
+        width: 100%;
+        border-left: none;
+        grid-template-columns: repeat(4, 45px);
+        grid-template-rows: repeat(4, 45px);
+        grid-gap: 0.5em;
+        justify-content: start;
+        display: flex;
+    }
+    .social_links {
+        display: flex;
+        align-items: center;
+        height: 25px;
+        justify-content: center;
+        width: 25px;
+        padding: 0px 0px;
+    }
+
+    .nav_block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-left: transparent;
+    }
+    .nav_links {
+        font-size: 20px;
+        text-align: center;
+    }
+    .nav_links a {
+        font-size: 20px;
+    }
+    .nav_links:hover {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 786px){
+    .menuboxmobile{
+        width: 100vw;
+    }
+    .top-bar{
+        width:100%;
+    }
+}
