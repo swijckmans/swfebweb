@@ -1,53 +1,111 @@
-.maincontainer{
+.maincontainer {
     padding: 8px;
     height: 100vh;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-template-rows: auto;
-    gap: 8px 8px;
+    gap: 10px 10px;
 }
+
 //maincontainer stuff
 
-.maincontainer h2{
+.maincontainer h2 {
     padding: 6px;
     font-size: 12px;
 }
-.maincontainer a{
+
+.maincontainer a {
     text-decoration: none;
     color: black;
+    height: 100%;
 }
 
-.jtftext{
-    padding: 12px;
+.jtftext {
+    padding: 24px;
     font-size: 24px;
+}
+
+.jtfftr {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 7px;
 }
 
 
 //below bit is to setup the grid names
-.jtf{
+.jtf {
     border-radius: 5px;
-    background: linear-gradient(45deg, #edf0ec, #e8ecae, #b6cfd2, #d5d5d5);
-    background-size: 800% 800%;
-    animation: Jtfbackground 20s ease infinite;
+    background: linear-gradient(321deg, #00c5ff, #458afd, #78ecdd);
+    background-size: 600% 600%;
+    animation: AnimationName 45s ease infinite;
+    position: relative;
 }
 
-.me{
+.me {
     border-radius: 5px;
     background: linear-gradient(270deg, #ececec, #aefff1, #c0ffae, #aed0ff);
     background-size: 800% 800%;
     animation: AboutBackgrounds 30s ease infinite;
+    height: 100%;
+    position: relative;
 }
 
-.red{
+.metext {
+    padding: 12px;
+    font-size: 28px;
+    text-align: center;
+}
+
+
+// button action
+.jtfbtn {
+    bottom: 10%;
+    background-color: transparent;
+    border-radius: 6px;
+    border: 1px solid #050505;
+    cursor: pointer;
+    color: #000000;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 11px 18px;
+    text-decoration: none;
+    margin: 20px auto;
+    position: relative;
+}
+
+.jtfbtn:hover {
+    background-color: #040404;
+    color: #78ecdd;
+}
+
+.jtfbtn:active {
+    position: relative;
+    top: 1px;
+}
+
+.becauseifoundnootherway{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.red {
     border-radius: 5px;
     background-color: red;
+    position: relative;
 }
-.blue{
+
+.blue {
     background-color: blue;
 }
-.green{
+
+.green {
     background-color: green;
 }
-.yellow{
+
+.yellow {
     background-color: yellow;
 }

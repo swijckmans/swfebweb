@@ -43,12 +43,13 @@
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
   </script>
   <link rel="stylesheet" href="styles/style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSBSVG4"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSBSVG4" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <div class="loader">
     <img src="images/loading.gif" alt="Welcome animation" />
@@ -101,48 +102,64 @@
   </div>
 
 
+
   <div class="maincontainer">
-    <div class="jtf"><a href="https://www.jothefish.com/">
-        <h2>Jo the Fish</h2>
-        <div class="jtftext">
-        <p1>What if every penny you have ever spent went to credible and ethical human beings?</p1></div>
+
+    <div class="me" data-aos="fade-up" data-aos-delay="100">
+      <a href="/about" data-aos="fade-down">
+        <h2>Welcome!</h2>
+        <div class="becauseifoundnootherway" data-aos="zoom-in" data-aos-delay="300">
+        <img src="images/simonemoji.png" alt="Simon as an emoji saying hi">
+      </div>
+        <div class="metext">
+          <p1>Hey! Great to have you.</p1>
+        </div>
       </a>
     </div>
 
-    <div class="jtf">
+    <div class="jtf" data-aos="fade-up" data-aos-delay="100">          
       <a href="https://www.jothefish.com/">
-        <h2>Jo the Fish</h2>
+        <h2>Projects</h2>
         <div class="jtftext">
-        <p1>With Jo the Fish I aim to help money flow into the hands of business owners that care about tomorrow and
-          take actions to make the world better.</p1></div>
+          <p1>Jo, sits in your browser and warns you when you end up on site that smells a bit fishy.</p1>
+        </div>
+        <div class="becauseifoundnootherway" data-aos="fade-down"   data-aos-delay="500"   data-aos-duration="1500">
+          <button class="jtfbtn">find out more</button>
+        </div>
+        <div class="jtfftr">
+          <p2>Jo the Fish 🐟</p2>
+        </div>
       </a>
     </div>
 
-    <div class="jtf">
+    <div class="jtf" data-aos="fade-up" data-aos-delay="100">
       <a href="https://www.jothefish.com/">
-        <h2>Jo the Fish</h2>
+        <h2>Projects</h2>
         <div class="jtftext">
-        <p1>We make users aware of the bad actors. People whom have violated basic values. For example: Ceo's that use their position of power to fuel discrimination and hate.</p1></div>
+          <p1>With Jo the Fish I aim to help money flow into the hands of business owners that care about tomorrow and
+            take actions to make the world better.</p1>
+        </div>
+        <div class="becauseifoundnootherway" data-aos="fade-down"  data-aos-delay="500"    data-aos-duration="1500">
+          <button class="jtfbtn">find out more</button>
+        </div>
+        <div class="jtfftr">
+          <p2>Jo the Fish 🐟</p2>
+        </div>
       </a>
     </div>
 
-    <div class="me">
-      <a href="/about">
-        <h2>About me</h2>
+    <div class="jtf" data-aos="fade-up" data-aos-delay="100">
+      <a href="https://www.jothefish.com/">
+        <h2>Projects</h2>
         <div class="jtftext">
-        <p1>Urg, I hate talking about myself... Anyway, what I do:</p1>
-      <ul>
-        <li>I build stuff, by hands sometimes but also by code.</li>
-        <li>Networking is fun, I do a bit of that.</li>
-        <li></li>
-      </ul></div>
-      </a>
-    </div>
-    <div class="me">
-      <a href="/about">
-        <h2>About me</h2>
-        <div class="jtftext">
-        <p1>Urg, I hate talking about myself</p1></div>
+          <p1>Just imagine how great the world will be if every penny you have ever spent went to credible and ethical human beings?</p1>
+        </div>
+        <div class="becauseifoundnootherway" data-aos="fade-down"  data-aos-delay="500"    data-aos-duration="1500">
+          <button class="jtfbtn">find out more</button>
+        </div>
+        <div class="jtfftr">
+          <p2>Jo the Fish 🐟</p2>
+        </div>
       </a>
     </div>
 
@@ -193,5 +210,9 @@
     </div>
   </footer>
 </body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 
 </html>

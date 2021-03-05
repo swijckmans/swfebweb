@@ -593,11 +593,11 @@ header {
   height: 100vh;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(320px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-  gap: 8px 8px;
+  gap: 10px 10px;
 }
 
 .maincontainer h2 {
@@ -608,19 +608,28 @@ header {
 .maincontainer a {
   text-decoration: none;
   color: black;
+  height: 100%;
 }
 
 .jtftext {
-  padding: 12px;
+  padding: 24px;
   font-size: 24px;
+}
+
+.jtfftr {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  padding: 7px;
 }
 
 .jtf {
   border-radius: 5px;
-  background: linear-gradient(45deg, #edf0ec, #e8ecae, #b6cfd2, #d5d5d5);
-  background-size: 800% 800%;
-  -webkit-animation: Jtfbackground 20s ease infinite;
-          animation: Jtfbackground 20s ease infinite;
+  background: linear-gradient(321deg, #00c5ff, #458afd, #78ecdd);
+  background-size: 600% 600%;
+  -webkit-animation: AnimationName 45s ease infinite;
+          animation: AnimationName 45s ease infinite;
+  position: relative;
 }
 
 .me {
@@ -630,11 +639,58 @@ header {
   background-size: 800% 800%;
   -webkit-animation: AboutBackgrounds 30s ease infinite;
           animation: AboutBackgrounds 30s ease infinite;
+  height: 100%;
+  position: relative;
+}
+
+.metext {
+  padding: 12px;
+  font-size: 28px;
+  text-align: center;
+}
+
+.jtfbtn {
+  bottom: 10%;
+  background-color: transparent;
+  border-radius: 6px;
+  border: 1px solid #050505;
+  cursor: pointer;
+  color: #000000;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 11px 18px;
+  text-decoration: none;
+  margin: 20px auto;
+  position: relative;
+}
+
+.jtfbtn:hover {
+  background-color: #040404;
+  color: #78ecdd;
+}
+
+.jtfbtn:active {
+  position: relative;
+  top: 1px;
+}
+
+.becauseifoundnootherway {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .red {
   border-radius: 5px;
   background-color: red;
+  position: relative;
 }
 
 .blue {
